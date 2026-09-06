@@ -10,6 +10,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Generate Missing Gradle Wrapper
+        run: |
+          npm install -g gradle
+          gradle wrapper
       - name: Build Debug APK
         run: |
           chmod +x gradlew
